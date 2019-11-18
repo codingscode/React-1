@@ -25,20 +25,30 @@ class App extends Component {
     })
   }
 
+  nomeManipuladorAlterado = (event) => {
+    this.setState({
+      pessoas: [
+        {nome: 'Tomas', idade: 15},
+        {nome: event.target.value, idade: 20},
+        {nome: 'Esther', idade: 25}
+      ]
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <h1>Olá, Sou um aplicativo React</h1>
         <p>Isto está funcionando</p>
-        <button onClick={this.switchManipuladorNome.bind(this, 'Samuel')}>Alterar nome</button> 
+        <button onClick={() => this.switchManipuladorNome('Samuel')}>Alterar nome</button> 
         <Pessoa 
         nome={this.state.pessoas[0].nome} 
         idade={this.state.pessoas[0].idade}/> 
         <Pessoa 
         nome={this.state.pessoas[1].nome} 
         idade={this.state.pessoas[1].idade}
-        click={this.switchManipuladorNome.bind(this, 'Enoch!')}>Meu hobbie : Xadrez</Pessoa> 
+        click={this.switchManipuladorNome.bind(this, 'Enoch!')}
+        changed={this.nomeManipuladorAlterado}>Meu hobbie : Xadrez</Pessoa> 
         <Pessoa
         nome={this.state.pessoas[2].nome} 
         idade={this.state.pessoas[2].idade}/> 
