@@ -1,15 +1,16 @@
 //criado no video8
 
 import React from 'react';
+import './Pessoa.css'
 
 const pessoa = (props) => {
    return (
-      <div>
+      <div className="Pessoa">
          <p onClick={props.click}>Eu sou {props.nome}, Eu sou uma Pessoa e tenho {props.idade} anos !</p>
          <p>{props.children}</p>
          <input type='text' onChange={props.changed} value={props.nome}></input>
       </div>
-         
+
    )
 }
 
