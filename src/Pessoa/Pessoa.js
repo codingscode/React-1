@@ -1,4 +1,3 @@
-//criado no video8
 
 import React from 'react';
 import './Pessoa.css'
@@ -10,7 +9,6 @@ const pessoa = (props) => {
          <p>{props.children}</p>
          <input type='text' onChange={props.changed} value={props.nome}></input>
       </div>
-
    )
 }
 

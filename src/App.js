@@ -36,11 +36,22 @@ class App extends Component {
   }
 
   render() {
+    const estilo = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1x solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    }
+
     return (
       <div className="App">
         <h1>Olá, Sou um aplicativo React</h1>
         <p>Isto está funcionando</p>
-        <button onClick={() => this.switchManipuladorNome('Samuel')}>Alterar nome</button> 
+        <button 
+        style={estilo}
+        onClick={() => this.switchManipuladorNome('Samuel')}>Alterar nome
+        </button> 
         <Pessoa 
         nome={this.state.pessoas[0].nome} 
         idade={this.state.pessoas[0].idade}/> 
